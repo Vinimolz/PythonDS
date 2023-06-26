@@ -1,4 +1,4 @@
-from LinkedList import *
+from Linked_List import *
 
 
 def main():
