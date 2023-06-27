@@ -16,6 +16,7 @@ class LinkedListWithTail:
         if self.head is None:
             self.head = node
             self.tail = node
+
         else:
             self.tail.next = node
             self.tail = node
