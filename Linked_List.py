@@ -27,6 +27,13 @@ class LinkedList:
 
             current_node = current_node.next
 
+    def delete_head(self):
+        """Deletes Linked List head if the list is not empty"""
+        if not self.head:
+            raise IndexError('Linked list is empty')
+
+        self.head = self.head.next
+
     def search(self, data):
         """Searches for given value traversing the linked list."""
         """Returns True if value is found and false if not found"""
@@ -51,6 +58,10 @@ class LinkedList:
 
     def print_linked_list(self):
         """Traverses the LL and print each node's value and Null and the end"""
+        if self.head is None:
+            print('The queue is empty')
+            return
+
         current_node = self.head
 
         while current_node is not None:
@@ -79,4 +90,10 @@ if __name__ == '__main__':
     ll.print_linked_list()  # output : 2 -> 67 -> 24 -> 31 -> None
 
     # Print the length of the updated Linked List
-    print(ll.length())  # output : 4
+    print(f'Queue length: {str(ll.length())}')  # output : 4
+
+    # Deleting head of Linked List
+    ll.delete_head()
+
+    # Displaying updated Linked List to the terminal
+    ll.print_linked_list()  # output : 67 -> 24 -> 31 -> None
