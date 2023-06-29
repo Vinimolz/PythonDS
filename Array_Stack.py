@@ -27,17 +27,26 @@ class Stack:
 
 
 if __name__ == '__main__':
+    # Create a new stack
     my_stack = Stack()
 
+    # Pushing elements to the stack
     my_stack.push(1)
     my_stack.push(2)
     my_stack.push(3)
     my_stack.push(4)
 
-    my_stack.print()
+    # Displaying the stack to the terminal
+    my_stack.print()  # output : 1 2 3 4
 
-    print(my_stack.peek())
+    # Getting top element on stack and printing
+    print(my_stack.peek())  # output : 4
 
-    my_stack.pop()
-    my_stack.print()
-    print(my_stack.peek())
+    # Popping top element from the stack
+    my_stack.pop()  # output : 4
+
+    # Displaying stack to the terminal
+    my_stack.print()  # output : 1 2 3
+
+    # Getting top element in stack and printing it
+    print(my_stack.peek())  # output : 3
