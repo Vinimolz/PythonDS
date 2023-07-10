@@ -90,8 +90,6 @@ class DoublyLinkedList:
     def print_dll(self):
         current_node = self.head
 
-        print('None <-> ')
-
         while current_node:
             print(current_node.data, end=' <-> ')
             current_node = current_node.next
@@ -100,4 +98,26 @@ class DoublyLinkedList:
 
 
 if __name__ == '__main__':
+
+    # Creates doubly linked list
     my_DLL = DoublyLinkedList()
+
+    # Appending elements to the linked list
+    my_DLL.append(6)
+    my_DLL.append(32)
+    my_DLL.append(75)
+
+    # Print doubly linked list to the terminal
+    my_DLL.print_dll()  # Output : 6 <-> 32 <-> 75 <-> None
+
+    # Add element to the beginning of the doubly linked list
+    my_DLL.prepend(23)
+
+    # Print doubly linked list to the terminal
+    my_DLL.print_dll()  # Output : 23 <-> 6 <-> 32 <-> 75 <-> None
+
+    # inserts element after given element
+    my_DLL.insert_after(32, 99)
+
+    # Print doubly linked list to the terminal
+    my_DLL.print_dll()  # Output : 23 <-> 6 <-> 32 <-> 99 <-> 75 <-> None
