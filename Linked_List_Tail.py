@@ -80,4 +80,3 @@ if __name__ == '__main__':
     if ll.search(4):
         print("working")  # Output : Working
 
-

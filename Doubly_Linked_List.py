@@ -97,3 +97,7 @@ class DoublyLinkedList:
             current_node = current_node.next
 
         print('None')
+
+
+if __name__ == '__main__':
+    my_DLL = DoublyLinkedList()
