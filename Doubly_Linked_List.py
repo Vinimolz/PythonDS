@@ -129,3 +129,24 @@ if __name__ == '__main__':
 
     # Print doubly linked list to the terminal
     my_DLL.print_dll()  # Output : 23 <-> 6 <-> 32 <-> 99 <-> 75 <-> None
+
+    # Delete element from doubly linked list
+    my_DLL.delete(6)
+
+    # Print doubly linked list to the terminal
+    my_DLL.print_dll()  # Output : 23 <-> 32 <-> 99 <-> 75 <-> None
+
+    # Delete head from doubly linked list
+    my_DLL.delete(23)
+
+    # Print doubly linked list to the terminal
+    my_DLL.print_dll()  # Output : 32 <-> 99 <-> 75 <-> None
+
+    # Delete tail from doubly linked list
+    my_DLL.delete(75)
+
+    # Print doubly linked list to the terminal
+    my_DLL.print_dll()  # Output : 32 <-> 99 <-> None
+
+    # Insert 75 after non existent 69 node
+    my_DLL.insert_after(75, 69)  # Output : "Node with data 75 was not found"
