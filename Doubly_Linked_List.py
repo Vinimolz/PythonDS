@@ -47,27 +47,35 @@ class DoublyLinkedList:
     def insert_after(self, prev_node, data):
         """Insert node after a certain element.
         The method assumes prev_node parameter was passed correctly from caller"""
+        current_node = self.head
 
-        if not prev_node:
-            print('Prev node was not found')
-            return
-        # Creating new node
-        new_node = DDLNode(data)
+        while current_node:
+            if current_node.data == prev_node:
 
-        # Changing all references for the three nodes affected
-        # 4 references must change
+                prev_node = current_node
+                # Creating new node
+                new_node = DDLNode(data)
 
-        # Start updating the next attributes (prev_node, new_node)
-        new_node.next = prev_node.next
-        prev_node.next = new_node
+                # Changing all references for the three nodes affected
+                # 4 references must change
 
-        # Update new node's prev attribute (set to the prev_node)
-        new_node.prev = prev_node
+                # Start updating the next attributes (prev_node, new_node)
+                new_node.next = prev_node.next
+                prev_node.next = new_node
 
-        # If the new node is not referencing None (it is not the last node)
-        # Update the new node's next node's prev attribute and set to new node
-        if new_node.next:
-            new_node.next.prev = new_node
+                # Update new node's prev attribute (set to the prev_node)
+                new_node.prev = prev_node
+
+                # If the new node is not referencing None (it is not the last node)
+                # Update the new node's next node's prev attribute and set to new node
+                if new_node.next:
+                    new_node.next.prev = new_node
+
+                return
+
+            current_node = current_node.next
+
+        print("Node with data {} not found.".format(data))
 
     def delete(self, data):
         """Deletes a node from the Doubly linked list and updates references"""
