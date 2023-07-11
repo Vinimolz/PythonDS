@@ -110,6 +110,8 @@ if __name__ == '__main__':
     # Creates doubly linked list
     my_DLL = DoublyLinkedList()
 
+    my_DLL.prepend(67)
+
     # Appending elements to the linked list
     my_DLL.append(6)
     my_DLL.append(32)
