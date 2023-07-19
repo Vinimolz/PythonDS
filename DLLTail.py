@@ -147,15 +147,56 @@ class TailedDLL:
             print('Linked list is empty')
             return
 
-        pass
+        cur_node = self.head
+
+        while cur_node:
+            if cur_node.data == value:
+                if cur_node.prev:
+                    cur_node.prev.next = cur_node.next
+                else:
+                    self.head = cur_node.next
+
+                if cur_node.next:
+                    cur_node.next.prev = cur_node.prev
+                else:
+                    self.tail = cur_node.prev
+
+            cur_node = cur_node.next
+
+        return
 
     def remove(self, node):
-        # Write your code here.
-        pass
+        if self.head is None:
+            print('Linked list is empty')
+            return
+
+        if node == self.head:
+            self.head = node.next
+
+        if node == self.tail:
+            self.tail == node.prev
+
+        if node.prev:
+            node.prev.next = node.next
+
+        if node.next:
+            node.next.prev = node.prev
+
+        return
 
     def contains_node_with_value(self, value):
-        # Write your code here.
-        pass
+        if self.head is None:
+            print('Linked list is empty')
+        else:
+            cur_node = self.head
+
+            while cur_node:
+                if cur_node.data == value:
+                    return True
+
+                cur_node = cur_node.next
+
+        return False
 
     def print_dll(self):
         if self.head is None:
@@ -227,15 +268,11 @@ if __name__ == '__main__':
     my_DLL.insert_at_position(2, 67)
     my_DLL.print_dll()
 
-    """
-    my_second_DLL = TailedDLL()
+    my_DLL.remove_nodes_with_value(999)
+    my_DLL.print_dll()
 
-    my_second_DLL.set_tail(1)
-    my_second_DLL.print_DLL()
+    my_DLL.remove_nodes_with_value(67)
+    my_DLL.print_dll()
 
-    my_second_DLL.set_tail(2)
-    my_second_DLL.print_DLL()
-
-    my_second_DLL.set_tail(3)
-    my_second_DLL.print_DLL()
-    """
+    if my_DLL.contains_node_with_value(5):
+        print('Contains value 5')
