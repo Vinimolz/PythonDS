@@ -22,12 +22,22 @@ def twoSum(nums, target):
     print(seen_nums)
     return []
 
+def fizz_buzz():
+    for i in range(1, 100):
+        if i % 3 == 0:
+            print('fizz')
+
+        if i % 5 == 0:
+            print('Buzz')
+
+        elif i % 3 == 0 and i % 5 == 0:
+            print('FizzBuzz')
+
+        else:
+            print(i)
 
 def main():
-    nums = [2, 7, 11, 15]
-    target = 9
-
-    print(twoSum(nums, target))
+    fizz_buzz()
 
 
 main()
